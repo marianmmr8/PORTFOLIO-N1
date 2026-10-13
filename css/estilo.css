@@ -1,0 +1,202 @@
+/* El asterisco es para decir esto es así  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* el root son variables, aquí se meten todas las cosas que se repitan y sea mas facil de cambiar , como puede ser el color principal.. */
+:root {
+  --color-principal: black;
+  --color-secundario:rgb(241, 194, 135);
+  --color-terciario:rgb(229, 229, 220);
+  --color-tarjeta:aliceblue;
+  --color-transicion:rgb(32, 181, 134);
+  --font-secundaria: "Original Surfer", sans-serif;
+}
+/* este html scroll es para que en la pagina se baje escroleando no directamente */
+html {
+  scroll-behavior: smooth;
+  
+}
+
+header {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* estas 3 siguientes son para fijar la cabecera */
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: aliceblue;
+  width: 100%;
+}
+
+#mw {
+  font-size: 200%;
+  font-weight: bolder;
+  color: rgb(18, 31, 31);
+  background-color: antiquewhite;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  font-family: var(--font-secundaria);
+  }
+/* con esto hemos puesto arriba a la derecha las palabras le damos forma y su transicion  */
+nav a {
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bolder;
+  color: rgb(18, 31, 31);
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+/* esta es la regla para que la transicion se convierta a la siguiente, esta regla es en lo que se convierte */
+nav a:hover {
+  color: rgb(32, 181, 134);
+  transform: scale(1.2);
+}
+#Marian {
+  width: 100%;
+  height: 80vh;
+  color: aliceblue;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../imagenes/fotoprogramacion.jpg");
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 4rem;
+  font-family: var(--font-secundaria);
+  
+}
+h2 {
+  font-family: var(--font-secundaria);
+}
+/* esto sirve para que la web se adpate a la pantalla */
+/* esto es una regla para tablet */
+@media (max-width: 1024px){
+h1{
+  font-size: 3rem;
+}
+}
+/* esto es una regla para el movil */
+@media (max-width: 768px){
+h1{
+font-size: 2rem;
+}
+
+}
+/* con esta regla le damos forma a las imagenes esta en particular es la que se queda en medio y redonda */
+#ceo {
+  padding: 5px;
+  background-color: aqua;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+  margin-top: -100px;
+}
+/* esta regla se centra en la imagen */
+#ceo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.trabajos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 2%;
+  padding: 2rem 0;
+}
+#trabajos h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 1 rem;
+
+}
+#trabajos {
+  background-color: var(--color-secundario);
+}
+
+@media (max-width: 1024px){
+  .trabajos {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media (max-width: 768px){
+  .trabajos {
+    grid-template-columns: repeat(1,1fr);
+  }
+}
+.tarjeta-trabajo img {
+  width: 100%;
+}
+.tarjeta-trabajo {
+  display: flex;
+  flex-direction: column;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 2%;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: var(--color-tarjeta);
+}
+.texto-tarjeta {
+  padding: 2%;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-secundaria);
+}
+/* con esto le damos margen al boton para que no se quede tan pegado al texto. */
+.texto-tarjeta p {
+  margin-bottom: 1rem;
+}
+/* la etiqueta button es boton , el boton de la pagina esta es la forma color...  */
+.texto-tarjeta button {
+  margin-top: auto;
+  background-color: --color-terciario;
+  color: var(--color-principal);
+  padding: 0.5 rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  border:none;
+}
+/* aqui le damos vida al boton  */
+.texto-tarjeta button:hover{
+  color:var(--color-transicion);
+  transform:translateY(-2px);
+}
+.footer {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--color-secundario);
+  border-radius:8px;
+
+}
+.footer-contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.footer-redes {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+footer a {
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+}
